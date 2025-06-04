@@ -1,0 +1,21 @@
+slug: untitled-track-mbtei1
+id: e6jecxl5nvew
+revision: 1
+title: Untitled Track
+description: ""
+icon: ""
+tags: []
+owner: infoblox
+developers:
+- iracic@infoblox.com
+instructors: []
+idle_timeout: 300
+timelimit: 1200
+lab_config:
+  extend_ttl: 0
+  sidebar_enabled: true
+  hideStopButton: false
+  feedback_recap_enabled: true
+  feedback_tab_enabled: false
+  loadingMessages: true
+enhanced_loading: null
