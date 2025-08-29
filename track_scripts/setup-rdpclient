@@ -1,0 +1,54 @@
+#!/bin/bash
+
+# Make sure INSTRUQT_PARTICIPANT_ID is set
+if [[ -z "$INSTRUQT_PARTICIPANT_ID" ]]; then
+  echo "❌ ERROR: INSTRUQT_PARTICIPANT_ID is not set."
+  exit 1
+fi
+
+DC1_FQDN="${INSTRUQT_PARTICIPANT_ID}-dc1.iracictechguru.com"
+DC2_FQDN="${INSTRUQT_PARTICIPANT_ID}-dc2.iracictechguru.com"
+DC3_FQDN="${INSTRUQT_PARTICIPANT_ID}-dc3.iracictechguru.com"
+
+cat <<EOF > /config/guacamole/user-mapping.xml
+<user-mapping>
+    <authorize
+        username="instruqt"
+        password="Passw0rd!">
+
+        <connection name="DomainController1">
+            <protocol>rdp</protocol>
+            <param name="hostname">${DC1_FQDN}</param>
+            <param name="port">3389</param>
+            <param name="username">Administrator</param>
+            <param name="password">Inf0blox2025!</param>
+            <param name="ignore-cert">true</param>
+            <param name="resize-method">display-update</param>
+            <param name="enable-font-smoothing">true</param>
+        </connection>
+
+        <connection name="DomainController2">
+            <protocol>rdp</protocol>
+            <param name="hostname">${DC2_FQDN}</param>
+            <param name="port">3389</param>
+            <param name="username">Administrator</param>
+            <param name="password">Inf0blox2025!</param>
+            <param name="ignore-cert">true</param>
+            <param name="resize-method">display-update</param>
+            <param name="enable-font-smoothing">true</param>
+        </connection>
+
+        <connection name="WindowsClient">
+            <protocol>rdp</protocol>
+            <param name="hostname">${DC3_FQDN}</param>
+            <param name="port">3389</param>
+            <param name="username">Administrator</param>
+            <param name="password">Inf0blox2025!</param>
+            <param name="ignore-cert">true</param>
+            <param name="resize-method">display-update</param>
+            <param name="enable-font-smoothing">true</param>
+        </connection>
+
+    </authorize>
+</user-mapping>
+EOF

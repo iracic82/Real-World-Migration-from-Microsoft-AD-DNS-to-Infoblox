@@ -1,16 +1,29 @@
-slug: untitled-track-mbtei1
+slug: ad-migration
 id: e6jecxl5nvew
 revision: 1
-title: Untitled Track
-description: ""
-icon: ""
+title: Real-World Migration from Microsoft AD DNS to Infoblox vNIOS
+description: "\U0001F9ED Introduction\n\nYou’ve been appointed as the DNS lead for
+  a company moving to the cloud, decommissioning Microsoft AD servers, and looking
+  for a modern home for DNS. In this hands-on lab, you’ll simulate a real-world DNS
+  migration from Microsoft AD DNS to Infoblox vNIOS, tackling challenges like data
+  extraction, error handling, and cutover validation.\n\nYou’ll:\n- Start with two
+  on-premises AD DNS servers (DC1 & DC2) populated with production zones.\n- Export
+  DNS data, prepare it for Infoblox import, and handle format/policy errors.\n- Switch
+  DNS resolution from Microsoft to Infoblox and validate functionality end-to-end.\n\nThis
+  lab blends DNS modernization, data migration workflows, and service cutover best
+  practices—exactly how you’d handle it in a real enterprise transformation.\n\n\U0001F3AF
+  Lab Objectives\n- Review the current Microsoft AD DNS setup and connect to AWS-hosted
+  lab resources.\n- Export, clean, and import DNS data into Infoblox vNIOS.\n- Cut
+  over DNS resolution to Infoblox and validate client access."
+icon: https://play.instruqt.com/assets/tracks/e6jecxl5nvew/c31663d57dce11f7baad50af3f7dec77/assets/Infoblox-logo-for-email.png
 tags: []
 owner: infoblox
 developers:
 - iracic@infoblox.com
 instructors: []
-idle_timeout: 300
-timelimit: 1200
+show_timer: true
+idle_timeout: 0
+timelimit: 14400
 lab_config:
   extend_ttl: 0
   sidebar_enabled: true

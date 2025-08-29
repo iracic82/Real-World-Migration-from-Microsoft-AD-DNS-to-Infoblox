@@ -1,0 +1,20 @@
+#!/bin/bash
+#
+# This script runs when the platform setup the challenge.
+#
+# The platform determines if the script was successful using the exit code of this
+# script. If the exit code is not 0, the script fails. 
+#
+
+echo "This is the cleanup script"
+
+# Run Python scripts
+cd /root/infoblox-lab/instruqt-aws-dc-lab-full/terraform/scripts
+python3 cleanup_dns_records.py
+sleep 10
+python3 clean_dns_gm.py
+sleep 10
+python3 delete_sandbox.py
+sleep 10
+
+exit 0

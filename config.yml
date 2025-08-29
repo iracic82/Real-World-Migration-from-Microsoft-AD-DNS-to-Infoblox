@@ -1,1 +1,55 @@
 version: "3"
+containers:
+- name: shell
+  image: gcr.io/instruqt/cloud-client
+  shell: /bin/bash
+  ports:
+  - 80
+  memory: 2048
+  resources:
+    memory: 2048
+- name: rdpclient
+  image: gcr.io/instruqt/guacamole
+  memory: 1024
+  resources:
+    memory: 1024
+virtualbrowsers:
+- name: aws-console
+  url: https://signin.aws.amazon.com/console
+- name: infoblox-gm-ui
+  url: https://${_SANDBOX_ID}-infoblox.iracictechguru.com
+- name: lab
+  url: https://infoblox-igor.s3.eu-west-1.amazonaws.com/AD+Migration.png
+- name: infoblox
+  url: https://csp.infoblox.com/
+aws_accounts:
+- name: infoblox-demo
+  services:
+  - access-analyzer
+  - amplify
+  - amplifybackend
+  - amplifyuibuilder
+  - autoscaling
+  - applicationinsights
+  - cloudformation
+  - ec2
+  - route53
+  - route53resolver
+  - sns
+  regions:
+  - eu-central-1
+  - eu-north-1
+  - eu-west-1
+  - eu-west-2
+  - eu-west-3
+  - us-east-1
+  managed_policies:
+  - arn:aws:iam::aws:policy/AdministratorAccess
+secrets:
+- name: Infoblox_Token
+- name: DEMO_AWS_ACCESS_KEY_ID
+- name: DEMO_AWS_SECRET_ACCESS_KEY
+- name: TF_VAR_windows_admin_password
+- name: DEMO_HOSTED_ZONE_ID
+- name: INFOBLOX_PASSWORD
+- name: INFOBLOX_EMAIL

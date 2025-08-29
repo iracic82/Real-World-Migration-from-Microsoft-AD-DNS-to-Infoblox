@@ -1,0 +1,36 @@
+#!/bin/bash
+#
+# This script runs when the platform setup the challenge.
+#
+# The platform determines if the script was successful using the exit code of this
+# script. If the exit code is not 0, the script fails. 
+#
+
+echo "This is the setup script"
+
+cd /root/infoblox-lab/instruqt-aws-dc-lab-full/ansible
+
+
+ansible-galaxy collection install -r requirements.txt --force
+ansible-playbook -i inventory.ini edge-bookmark.yml
+sleep 10
+ansible-playbook -i inventory.ini bootstrap-dc-import-now.yml
+sleep 10
+
+
+# Run Python scripts
+#cd /root/infoblox-lab/instruqt-aws-dc-lab-full/terraform/scripts
+#python3 setup_dns.py
+#sleep 10
+#python3 create_dns_gm.py
+#sleep 10
+#cd /root/infoblox-lab/instruqt-aws-dc-lab-full/terraform
+#terraform destroy --auto-approve -target=aws_instance.gmc 
+#sleep 180
+#cd /root/infoblox-lab/instruqt-aws-dc-lab-full/terraform/scripts
+##python3 create_gmc_cloudinit.py
+#cd /root/infoblox-lab/instruqt-aws-dc-lab-full/terraform
+#terraform apply --auto-approve -target=aws_instance.gmc 
+
+
+
