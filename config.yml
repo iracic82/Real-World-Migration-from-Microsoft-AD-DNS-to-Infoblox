@@ -46,10 +46,10 @@ aws_accounts:
   managed_policies:
   - arn:aws:iam::aws:policy/AdministratorAccess
 secrets:
+- name: INFOBLOX_PASSWORD
+- name: INFOBLOX_EMAIL
 - name: Infoblox_Token
 - name: DEMO_AWS_ACCESS_KEY_ID
 - name: DEMO_AWS_SECRET_ACCESS_KEY
-- name: TF_VAR_windows_admin_password
 - name: DEMO_HOSTED_ZONE_ID
-- name: INFOBLOX_PASSWORD
-- name: INFOBLOX_EMAIL
+- name: TF_VAR_windows_admin_password

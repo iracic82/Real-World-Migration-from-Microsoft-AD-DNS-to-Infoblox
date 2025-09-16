@@ -60,6 +60,15 @@ enhanced_loading: null
 ## 1) Introduction - Migrating from Microsoft AD DNS to Infoblox NIOS – A Real-World Scenario
 ===
 
+#  ⚡ Pre-Intro: Consultant’s Lens
+
+Here you’ll experience a migration the same way an Infoblox Certified Consultant would.
+The proprietary tools in this lab are available only through Infoblox Professional Services and Partner Professional Services, but the takeaway is clear:
+
+💡 Infoblox experts bring the process, discipline, and speed that make customer migrations simple.
+
+
+___
 
 ## Track Introduction
 
