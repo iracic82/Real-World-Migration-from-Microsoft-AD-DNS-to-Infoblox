@@ -1,5 +1,6 @@
 ---
 slug: ms-ad-to-infoblox-final
+id: tlr9f1jfmlrf
 type: quiz
 title: Final Challenge – Migrating from Microsoft AD DNS to Infoblox
 teaser: You’ve completed the cutover from Microsoft AD DNS to Infoblox. Now test your
@@ -15,6 +16,8 @@ solution:
 - 0
 difficulty: basic
 timelimit: 0
+lab_config:
+  default_layout_sidebar_size: 0
 enhanced_loading: false
 ---
 # After migration, what’s the key benefit of running DNS and DHCP services on Infoblox instead of Microsoft AD?

@@ -152,7 +152,7 @@ On the login screen, choose IAM Account (not root).
 ```
 ---
 
-## 3) Configure Windows AD/DC Servers via Ansible
+## 3) Validate AD/DNS Baseline Before Migration
 ===
 
 ✅ Verify that the environment is healthy and that DNS data is in place before migration begins.
