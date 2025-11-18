@@ -239,7 +239,7 @@ Configure > Administration > Migration.
 8.	Open the corresponding first folder (e.g., ec2amaz-xxxx.corp.infolab_ib_export) and search for the .conf file with the extension .conf (e.g., ec2amaz-xxxx.corp.infolab-named.conf).
 
 > [!IMPORTANT]
-> NOTE: Copy the exact .conf filename — we will need this later.
+> NOTE: Copy the exact .conf filename ( with the extension .conf as well ) — we will need this later.
 
 ![Screenshot 2025-08-14 at 10.30.41.png](https://play.instruqt.com/assets/tracks/e6jecxl5nvew/ee3c9691b51dd3c947c7d91bc04525a9/assets/Screenshot%202025-08-14%20at%2010.30.41.png)
 
@@ -250,7 +250,7 @@ Configure > Administration > Migration.
 
 10.	Now go back to the Infoblox Portal where we left off and continue with the wizard.
 
-11. In the DNS Configuration file name field, paste the exact .conf file name you copied earlier (e.g., ec2amaz-9f9fqr4.corp.infolab-named).
+11. In the DNS Configuration file name field, paste the exact .conf file name ( with the .conf extension ) you copied earlier (e.g., ec2amaz-9f9fqr4.corp.infolab-named.conf).
 - For DNS Record Data Source, click Select File and choose the ZIP file you created earlier (e.g., ec2amaz-9f9fqr4.corp.infolab_ib_export.zip).
 - Leave DDNS Configuration File empty
 - Click Save & Next to proceed.
