@@ -35,7 +35,7 @@ echo "export TF_VAR_Access_Secret_AWS=${INSTRUQT_AWS_ACCOUNT_INFOBLOX_DEMO_AWS_S
 echo "export TF_VAR_windows_admin_password=${TF_VAR_windows_admin_password} " >> /root/.bashrc
 echo "export DEMO_AWS_ACCESS_KEY_ID=${DEMO_AWS_ACCESS_KEY_ID} " >> /root/.bashrc
 echo "export DEMO_AWS_SECRET_ACCESS_KEY=${DEMO_AWS_SECRET_ACCESS_KEY} " >> /root/.bashrc
-echo "export Infoblox_Token=${Infoblox_Token} " >> /root/.bashrc
+#echo "export Infoblox_Token=${Infoblox_Token} " >> /root/.bashrc
 echo "export TF_VAR_instruqt_id=${INSTRUQT_PARTICIPANT_ID} " >> /root/.bashrc
 echo "export INFOBLOX_EMAIL=${INFOBLOX_EMAIL} " >> /root/.bashrc
 echo "export INFOBLOX_PASSWORD=${INFOBLOX_PASSWORD} " >> /root/.bashrc
@@ -261,6 +261,7 @@ python3 setup_dns.py
 sleep 10
 python3 create_dns_gm.py
 sleep 10
+Infoblox_Token=${Infoblox_Token}
 python3 create_sandbox.py
 sleep 60
 python3 create_user.py

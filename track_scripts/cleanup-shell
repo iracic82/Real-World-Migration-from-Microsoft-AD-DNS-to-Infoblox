@@ -14,6 +14,7 @@ python3 cleanup_dns_records.py
 sleep 10
 python3 clean_dns_gm.py
 sleep 10
+Infoblox_Token=${Infoblox_Token}
 python3 delete_sandbox.py
 sleep 10
 
