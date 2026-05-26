@@ -2,16 +2,26 @@
 set -euo pipefail
 
 apt update -y
-apt install -y git jq netcat-openbsd libxml2-utils \
-               software-properties-common ca-certificates curl gnupg
+apt install -y git iputils-ping jq ansible python3-pip dnsutils curl unzip ca-certificates \
+               netcat-openbsd libxml2-utils gnupg
+apt install -y software-properties-common || true
 
-# HashiCorp repo (terraform)
-install -m 0755 -d /etc/apt/keyrings
-curl -fsSL https://apt.releases.hashicorp.com/gpg | gpg --dearmor -o /etc/apt/keyrings/hashicorp-archive-keyring.gpg
-echo "deb [signed-by=/etc/apt/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" \
-  > /etc/apt/sources.list.d/hashicorp.list
-apt update -y
-apt install -y terraform
+# Install Terraform
+TF_VERSION="${TF_VERSION:-1.10.5}"
+
+if ! command -v terraform >/dev/null 2>&1 || \
+   [ "$(terraform version -json 2>/dev/null | jq -r '.terraform_version')" != "$TF_VERSION" ]; then
+
+  curl -fsSL \
+    "https://releases.hashicorp.com/terraform/${TF_VERSION}/terraform_${TF_VERSION}_linux_amd64.zip" \
+    -o /tmp/terraform.zip
+
+  unzip -oq /tmp/terraform.zip -d /usr/local/bin
+  chmod +x /usr/local/bin/terraform
+  rm -f /tmp/terraform.zip
+fi
+
+terraform version
 
 # --- Ansible: pip install ONLY (no apt ansible) ---
 python3 -m pip install --upgrade pip
